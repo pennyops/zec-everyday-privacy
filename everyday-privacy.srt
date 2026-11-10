@@ -1,0 +1,35 @@
+1
+00:00:00,600 --> 00:00:02,200
+Everyday privacy.
+
+2
+00:00:06,200 --> 00:00:11,800
+Your day is logged. Every purchase, chat and location ping is sent to someone else's server.
+
+3
+00:00:14,200 --> 00:00:18,100
+Shopping builds a profile: what you buy, where you live, your habits.
+
+4
+00:00:22,200 --> 00:00:26,200
+Talk to an AI, and your prompts may be stored and used for training.
+
+5
+00:00:30,200 --> 00:00:33,700
+And servers get breached. Billions of records spill out.
+
+6
+00:00:38,200 --> 00:00:44,300
+Money is no different. Most blockchains show every address and amount. Shielded Zcash hides them.
+
+7
+00:00:48,400 --> 00:00:54,100
+Pick a wallet that supports shielded Zcash: on your phone, your desktop, or a hardware device.
+
+8
+00:01:06,000 --> 00:01:08,700
+Pay, donate, save, and tip, privately.
+
+9
+00:01:10,600 --> 00:01:12,300
+Take your privacy back.
