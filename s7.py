@@ -4,6 +4,7 @@ import os
 W,H,FPS=1920,1080,30
 BG=(15,20,25); GOLD=(244,183,40); WHITE=(240,240,240); CARD=(30,38,46); GREY=(150,160,170)
 FB="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR="/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+LOGO={n:Image.open(f"assets/wallets/{f}.webp").convert("RGBA").resize((300,172)) for n,f in [("ZODL","zodl"),("Zingo!","zingo"),("Edge","edge"),("Unstoppable","unstoppable"),("Cake","cake"),("Zkool","zkool"),("Keystone","keystone"),("Ledger","ledger"),("Trezor","trezor")]}
 nm=ImageFont.truetype(FB,56); tg=ImageFont.truetype(FR,32); cap=ImageFont.truetype(FB,64)
 groups=[[("ZODL","Mobile · Shielded"),("Zingo!","Mobile/Desktop · Shielded"),("Edge","Mobile · Multi-coin")],
         [("Unstoppable","Mobile · Multi-coin"),("Cake","Mobile · Multi-coin"),("Zkool","Desktop/Mobile · Shielded")],
@@ -21,8 +22,9 @@ for i in range(FPS*SEC):
         al=a*(1-out)
         if al<=0: continue
         d.rounded_rectangle((x0,y0,x0+480,y0+360),radius=24,fill=mix(CARD,al),outline=mix(GOLD,al),width=4)
-        d.ellipse((x0+190,y0+40,x0+290,y0+140),outline=mix(GOLD,al),width=6)
-        w=d.textlength(name,font=nm); d.text((x0+240-w/2,y0+170),name,font=nm,fill=mix(WHITE,al))
-        w=d.textlength(tag,font=tg); d.text((x0+240-w/2,y0+260),tag,font=tg,fill=mix(GREY,al))
+        d.rounded_rectangle((x0+80,y0+14,x0+400,y0+186),radius=16,fill=mix((228,232,236),al))
+        lg=LOGO[name].copy(); lg.putalpha(lg.getchannel("A").point(lambda v:int(v*al))); im.paste(lg,(x0+90,y0+14),lg)
+        w=d.textlength(name,font=nm); d.text((x0+240-w/2,y0+192),name,font=nm,fill=mix(WHITE,al))
+        w=d.textlength(tag,font=tg); d.text((x0+240-w/2,y0+275),tag,font=tg,fill=mix(GREY,al))
     f="More at zechub.wiki/wallets"; w=d.textlength(f,font=tg); d.text(((W-w)/2,900),f,font=tg,fill=GOLD)
     im.save(f"frames_s7/f{i:04d}.png")
